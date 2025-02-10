@@ -4,19 +4,37 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A transcript of the iterative development process for a Cheerio.js web crawler project, featuring contributions from Qwen2.5-Max.">
+    <meta property="og:title" content="Cheerio Iterative Development via Prompt Engineering">
+    <meta property="og:description" content="A transcript of the iterative development process for a Cheerio.js web crawler project, featuring contributions from Qwen2.5-Max.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/165236343?v=4&size=128">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/165236343?v=4&size=128"/>
     <title>Citations</title>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: #144000;
             color: yellow;
+            display: inline-flexbox;
             line-height: 1.5;
             padding: 0;
             margin: 0;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
+            margin-bottom: 10px;
+        }
+        .conversation-participants {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             margin-bottom: 20px;
+            padding-left: 1.33vw;
+        }
+        .conversation-participants h3 {
+            margin: 0;
+            white-space: nowrap;
         }
         dl {
             background: #144000;
@@ -51,10 +69,14 @@
             display: block;
             border: yellowgreen 1px solid;
             text-indent: 2vw;
-            margin-left: 1.75vw;
+            margin-left: 0.5vw;
             margin-bottom: 1.75vh;
             margin-top: 5px;
             line-break: strict;
+        }
+        li:hover {
+            background-color: #1a5200;
+            border-color: yellow;
         }
         strong {
             margin-left: 0;
@@ -63,6 +85,14 @@
 
         .acknowledgements {
             margin-left: 12px;
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+            li {
+                text-indent: 4vw;
+            }
         }
     </style>
   </head>
@@ -167,11 +197,12 @@
     
     <p class="acknowledgements">
         Special thanks to **Qwen2.5-Max** for their expertise, patience, and iterative approach to problem-solving. Their contributions were instrumental in bringing this project to life.
-        
+        <br>
         <span id="more-info">For more information about Qwen2.5-Max, visit:</span>
+            <br>
             <a href="https://www.alibabacloud.com">Alibaba Cloud</a>
+            <br>
             <a href="https://qwen.aliyun.com">Qwen Documentation</a>
-
     </p> <!-- End id=acknowledgements-->
     </dl>
   </body>
