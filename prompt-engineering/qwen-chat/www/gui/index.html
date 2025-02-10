@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Crawler GUI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Web Crawler</h1>
+        <form id="crawlerForm">
+            <label for="baseURL">Base URL:</label>
+            <input type="url" id="baseURL" name="baseURL" placeholder="https://example.com" required>
+
+            <label for="pageURL">Page URL to Crawl:</label>
+            <input type="url" id="pageURL" name="pageURL" placeholder="https://example.com/page" required>
+
+            <label for="maxURLcount">Max URLs to Discover:</label>
+            <input type="number" id="maxURLcount" name="maxURLcount" min="1" value="300" required>
+
+            <button type="submit">Start Crawling</button>
+        </form>
+        <div id="progress">
+            <h3>Progress</h3>
+            <pre id="progressLog"></pre>
+        </div>
+        <div id="output">
+            <h2>Results</h2>
+            <pre id="resultLog"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+</html>

@@ -1,0 +1,15 @@
+https://cheerio.js.org/docs/intro
+https://cheerio.js.org/docs/basics/loading
+https://cheerio.js.org/docs/basics/selecting
+https://cheerio.js.org/docs/basics/traversing
+https://cheerio.js.org/docs/basics/manipulation
+https://cheerio.js.org/docs/advanced/extract
+https://cheerio.js.org/docs/advanced/configuring-cheerio
+https://cheerio.js.org/docs/advanced/extending-cheerio
+
+
+
+A Wordpress website that is okay with being scraped according to Educative:
+https://scrapeme.live/
+https://scrapeme.live/shop/
+https://scrapeme.live/robots.txt
