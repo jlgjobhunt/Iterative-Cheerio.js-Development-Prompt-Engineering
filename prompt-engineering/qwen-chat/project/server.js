@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 const http = require('http');
 const { Server } = require('socket.io');
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 const app = express();
 const server = http.createServer(app);
@@ -39,9 +40,8 @@ io.on('connection', (socket) => {
             while (queue.length > 0 && discoveredURLs.size < maxURLcount) {
                 const currentURL = queue.shift();
                 socket.emit('progress', `Crawling: ${currentURL}`);
-
                 const page = await browser.newPage();
-                await page.goto(currentURL, { waitUntil: 'networkidle2', timeout: 30000 });
+                await page.goto(currentURL, { waitUntil: `networkidle2`, timeout: 30000 });
                 const html = await page.content();
                 await page.close();
 
@@ -64,6 +64,18 @@ io.on('connection', (socket) => {
             }
 
             socket.emit('progress', `Crawling completed. Found ${discoveredURLs.size} unique URLs.`);
+            
+            // Export results to CSV.
+            const csvWriter = createCsvWriter({
+                path: 'results.csv',
+                header: [{ id: 'url', title: 'URL' }],
+            });
+            
+            const urlsArray = Array.from(discoveredURLs).map(url => ({ url }));
+            await csvWriter.writeRecords(urlsArray);
+            console.log('Results exported to results.csv');
+
+            // Send results to frontend.
             socket.emit('results', Array.from(discoveredURLs));
         } catch (error) {
             console.error('Error during crawling:', error.message);
