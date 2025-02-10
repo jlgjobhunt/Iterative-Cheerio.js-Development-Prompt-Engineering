@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressLog = document.getElementById('progressLog');
     const resultLog = document.getElementById('resultLog');
 
-    const socket = io();
+    const socket = io("http://localhost:3000")
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
