@@ -143,7 +143,7 @@ io.on('connection', (socket) => {
             let markdownContent = '';
 
             for (const [category, links] of Object.entries(categorizedLinks)) {
-                markdownContent += `## ${category}\n\n${links.join('\n')}\n\n`;
+                markdownContent += `## ${category}\n\n${links.join('\n')}\n\n\r\n`;
             }
 
 
