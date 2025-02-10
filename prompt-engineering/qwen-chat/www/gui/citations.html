@@ -24,11 +24,24 @@
             text-align: center;
             margin-bottom: 10px;
         }
+        #participants {
+            border: 1px dashed #007bff;
+            padding: 0 15px;
+        }
+        #and {
+            position: relative; /* Take the & out of the normal flow */
+            /* top: 50%; /* Center vertically */
+            /* left: 50%; /* Center horizontally */
+            /* transform: translate(-50%, -50%); /* Adjust for exact centering */
+            opacity: 1;
+            pointer-events: none; /* Ensure it doesn't interfere with clicks */
+        }
         .conversation-participants {
+            align-items: center;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             gap: 20px;
+            justify-content: center;
             margin-bottom: 20px;
             padding-left: 1.33vw;
         }
@@ -93,16 +106,30 @@
             li {
                 text-indent: 4vw;
             }
+            .conversation-participants {
+                display: block;
+                margin-right: 66.6%;
+                text-align: right;
+            }
+            #and {
+                display: flex;
+                text-align: center;
+                padding-left: 66.6%;
+            }
         }
     </style>
   </head>
   <body>
     <h1>CHEERIO ITERATIVE DEVELOPMENT VIA PROMPT ENGINEERING</h1>
     <h2>A Transcript of the Sunday, February 9, 2025 Conversation</h2>
-    <h3>Conversation Participants:</h3>
-    <h3><a href="mailto:j.l.g.jobhunt@gmail.com">Prompt Engineer: Joshua Greenfield</a></h3>
-    <h3><a href="https://chat.qwenlm.ai/c/41cb8e26-e472-48a4-a074-4c700781c9a7">Large Language Model: Qwen2.5-Max</a></h3>
-
+    <div id="participants">
+        <h3>Conversation Participants:</h3>
+        <div class="conversation-participants">
+            <h3><a href="mailto:j.l.g.jobhunt@gmail.com" aria-label="Email Joshua Greenfield">Prompt Engineer: Joshua Greenfield</a></h3>
+                <span role="presentation" id="and">&</span>
+            <h3><a href="https://chat.qwenlm.ai/c/41cb8e26-e472-48a4-a074-4c700781c9a7" aria-label="Qwen2.5-Max Documentation">Large Language Model: Qwen2.5-Max</a></h3>
+        </div>
+    </div>
     <dl>
         <dt> Citation for <a href="https://chat.qwenlm.ai/c/41cb8e26-e472-48a4-a074-4c700781c9a7">Qwen2.5-Max</a>'s Contributions </dt>
 
